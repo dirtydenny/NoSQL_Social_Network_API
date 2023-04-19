@@ -21,23 +21,31 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // createUser(req, res) {
+  //   User.create(req.body)
+  //     .then((dbUserData) => res.json(dbUserData))
+  //     .catch((err) => res.status(500).json(err));
+  // },
   createUser(req, res) {
     User.create(req.body)
-      .then((userData) => res.json(userData))
-      .catch((err) => res.status(500).json(err));
+      .then((dbUserData) => {
+        res.json(dbUserData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
   deleteUser(req, res) {
-    User.findOneAndDelete(
-      { _id: req.params.userId },
-    )
+    User.findOneAndDelete({ _id: req.params.userId })
       .then((userData) => res.json(userData))
       .catch((err) => res.status(500).json(err));
   },
   updateUser(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      {  $set: req.body },
-      {  runValidators: true, new: true }
+      { $set: req.body },
+      { runValidators: true, new: true }
     )
       .then((userData) => res.json(userData))
       .catch((err) => res.status(500).json(err));
@@ -60,16 +68,15 @@ module.exports = {
   },
   // burn your friendships to the ground, I mean, delete a friend
   removeFriend(req, res) {
+    console.log("you are deleting a friend");
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $pull: { friends: { friendId: req.params.friendId } } },
+      { $pull: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     )
       .then((userData) =>
         !userData
-          ? res
-              .status(404)
-              .json({ message: "No user found with that ID :(" })
+          ? res.status(404).json({ message: "No user found with that ID :(" })
           : res.json(userData)
       )
       .catch((err) => res.status(500).json(err));
