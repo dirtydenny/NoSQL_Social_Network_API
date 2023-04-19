@@ -22,7 +22,12 @@
 
   ## Description
 
-  The purpose of the exercise was: AS A social media startup
+  The purpose of the exercise is: 
+  AS A social media startup
+  I WANT an API for my social network that uses a NoSQL database
+  SO THAT my website can handle large amounts of unstructured dataAS A social media startup
+
+  Technologies used in this repo are MongoDB, Express.js, and Mongoose.
 
   ## Installation
 
@@ -30,7 +35,18 @@
 
   ## Usage
 
-  Please navigate to the root directory, add the packages, and NPM start. Once you have started the database you can rtest it on Insomnia to check it function.
+  Please navigate to the root directory, add the packages, and NPM start. 
+  Once you have started the database you can test it on Insomnia to check it function.
+
+  Routes to use in Insomnia:
+  Get all Users GET: http://localhost:3001/api/users/
+  Add a User POST: http://localhost:3001/api/users/
+  Get User by id GET: http://localhost:3001/api/users/ - insert userId here -
+  Update User by id PUT: http://localhost:3001/api/users/ - insert userId here -
+  Delete a User by id DELETE: http://localhost:3001/api/users/ - insert userId here -
+  Delete a Friend by id DELETE: http://localhost:3001/api/users/ - insert userId here - /friends/ - insert friendId here -
+  Add a Friend by user id POST: http://localhost:3001/api/users/ - insert userId here - /friends/
+  
 
   ## Tests
 
