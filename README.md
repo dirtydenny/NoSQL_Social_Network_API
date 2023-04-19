@@ -39,20 +39,20 @@
   Once you have started the database you can test it on Insomnia to check it function.
 
   Routes to use in Insomnia:
-  Get all Users GET: http://localhost:3001/api/users/
-  Add a User POST: http://localhost:3001/api/users/
-  Get User by id GET: http://localhost:3001/api/users/ - insert userId here -
-  Update User by id PUT: http://localhost:3001/api/users/ - insert userId here -
-  Delete a User by id DELETE: http://localhost:3001/api/users/ - insert userId here -
-  Delete a Friend by id DELETE: http://localhost:3001/api/users/ - insert userId here - /friends/ - insert friendId here -
-  Add a Friend by user id POST: http://localhost:3001/api/users/ - insert userId here - /friends/
-  Delete a Thought by id DELETE: http://localhost:3001/api/thought/ - insert thoughId here -
-  Update a Thought by id PUT: http://localhost:3001/api/thought/ - insert thoughId here -
-  Get a single Thought by id GET: http://localhost:3001/api/thought/ - insert thoughId here -
-  Get all Thoughts GET: http://localhost:3001/api/thought/
-  Add a Thought POST: http://localhost:3001/api/thought/ - insert userId here -
-  Delete a Reaction DELETE: http://localhost:3001/api/thought/- insert thoughId here -/reactions/- insert reactionId here -
-  Add a Reaction POST: http://localhost:3001/api/thought/- insert userId here -/reactions/  
+  - Get all Users GET: http://localhost:3001/api/users/
+  - Add a User POST: http://localhost:3001/api/users/
+  - Get User by id GET: http://localhost:3001/api/users/ - insert userId here -
+  - Update User by id PUT: http://localhost:3001/api/users/ - insert userId here -
+  - Delete a User by id DELETE: http://localhost:3001/api/users/ - insert userId here -
+  - Delete a Friend by id DELETE: http://localhost:3001/api/users/ - insert userId here - /friends/ - insert friendId here -
+  - Add a Friend by user id POST: http://localhost:3001/api/users/ - insert userId here - /friends/
+  - Delete a Thought by id DELETE: http://localhost:3001/api/thought/ - insert thoughId here -
+  - Update a Thought by id PUT: http://localhost:3001/api/thought/ - insert thoughId here -
+  - Get a single Thought by id GET: http://localhost:3001/api/thought/ - insert thoughId here -
+  - Get all Thoughts GET: http://localhost:3001/api/thought/
+  - Add a Thought POST: http://localhost:3001/api/thought/ - insert userId here -
+  - Delete a Reaction DELETE: http://localhost:3001/api/thought/- insert thoughId here -/reactions/- insert reactionId here -
+  - Add a Reaction POST: http://localhost:3001/api/thought/- insert userId here -/reactions/  
   
   ## Tests
 

@@ -12,7 +12,7 @@ const {
 // get all thoughts
 router.route('/').get(getAllThoughts)
 
-//router.route('/:userId').post(createThought);
+router.route('/:userId').post(createThought);
 // get a single thought by id 
 router.route('/:thoughtId').get(getSingleThought).delete(removeThought).put(updateThought);
 // reactions
