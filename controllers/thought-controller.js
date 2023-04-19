@@ -25,9 +25,9 @@ module.exports = {
   createThought(req, res) {
     Thought.create(req.body)
     .then((thoughtData) => {
-      Thought.findOneAndUpdate(
+      User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $push: { thoughts: thoughtData._id } },
+            { $addToSet: { thoughts: thoughtData._id } },
             { runValidators: true, new: true });
     })
     
@@ -45,7 +45,7 @@ module.exports = {
       .then((thoughts) =>
         !thoughts
           ? res.status(404).json({ message: 'No such thought exists' })
-          : Thought.findOneAndUpdate(
+          : User.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
               { new: true }
