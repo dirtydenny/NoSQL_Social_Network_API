@@ -8,7 +8,7 @@ const reactionSchema = new mongoose.Schema({
     default: () => new mongoose.Types.ObjectId(),
   },
   reactionBody: {
-    tyoe: String,
+    type: String,
     required: true,
     minLength: 1,
     maxLength: 280,
@@ -23,11 +23,12 @@ const reactionSchema = new mongoose.Schema({
     get: (timeStamp) => timeStamp.toLocaleDateString(),
   },
 },
+{
  toJSON: {
     virtuals: true,
     getters: true,
   },
   id: false,
-); 
+}); 
 
 module.exports = reactionSchema;

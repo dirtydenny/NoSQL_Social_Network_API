@@ -23,10 +23,14 @@ module.exports = {
   },
 // have a thought
   createThought(req, res) {
-    Thought.findOneAndUpdate(
-      { _id: req.params.userId },
-      { $push: { thoughts: thoughtData._id } },
-      { runValidators: true, new: true })
+    Thought.create(req.body)
+    .then((thoughtData) => {
+      Thought.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $push: { thoughts: thoughtData._id } },
+            { runValidators: true, new: true });
+    })
+    
     .then((thoughtData) =>
         !thoughtData
           ? res.status(404).json({ message: "No user with that ID, but thought created." })
