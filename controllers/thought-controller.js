@@ -45,7 +45,7 @@ module.exports = {
       .then((thoughts) =>
         !thoughts
           ? res.status(404).json({ message: 'No such thought exists' })
-          : Course.findOneAndUpdate(
+          : Thought.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
               { new: true }
@@ -81,7 +81,7 @@ module.exports = {
 // create a reaction to a thought
   createReaction(req, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.thoughId },
+      { _id: req.params.thoughtId },
       { $addToSet: { reactions: req.body } },
       { runValidators: true, new: true }
     )
