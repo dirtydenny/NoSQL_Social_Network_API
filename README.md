@@ -25,7 +25,7 @@
   The purpose of the exercise is:<br>
   AS A social media startup<br>
   I WANT an API for my social network that uses a NoSQL database<br>
-  SO THAT my website can handle large amounts of unstructured dataAS A social media startup<br>
+  SO THAT my website can handle large amounts of unstructured data<br>
 
   Technologies used in this repo are MongoDB, Express.js, and Mongoose.<br>
 
